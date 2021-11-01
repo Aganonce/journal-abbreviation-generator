@@ -23,7 +23,7 @@ After cloning the repository call
 
 ```bash
 pip install -r requirements.txt
-python -m spacy download en
+python -m spacy download en_core_web_sm
 ```
 
 This will install all required dependencies. To run the abbreviation program, call
