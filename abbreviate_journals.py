@@ -30,12 +30,18 @@ def abbreviate_journal(res):
     if res.lower() == 'science':
         return 1
 
+    if res.lower() == 'nature':
+        return 1
+
     if 'arxiv' in res.lower():
         return 1
 
     for i in res:
         if i in '!"#$%\'()*,-./;<=>?@[]^_`{|}~':
             return 0
+
+    if res.lower() == 'proceedings of the national academy of sciences':
+        return 'Proc. Natl. Acad. Sci. U.S.A.'
     
     res = re.sub(r'[^\w\s]','',res)
     res = res.replace('&', '').replace('\\', '')
